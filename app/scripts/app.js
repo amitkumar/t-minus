@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('tminus', ['ionic', 'tminus.controllers'])
+angular.module('tminus', ['ionic', 'tminus.controllers', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -40,25 +40,18 @@ angular.module('tminus', ['ionic', 'tminus.controllers'])
       }
     }
   })
-    .state('app.playlists', {
-      url: "/playlists",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/playlists.html",
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
 
-  .state('app.single', {
-    url: "/playlists/:playlistId",
+  .state('app.countdown-create', {
+    url: "/create",
     views: {
       'menuContent': {
-        templateUrl: "templates/playlist.html",
-        controller: 'PlaylistCtrl'
+        templateUrl: "components/countdown-create/countdown-create.html",
+        controller: 'CountdownCreateCtrl as CountdownCreateCtrl'
       }
     }
   });
+
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/list');
 });

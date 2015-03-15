@@ -1,0 +1,39 @@
+<ion-view view-title="Add New">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input">
+        <!-- <span class="input-label">Title</span> -->
+        <input type="text" placeholder="Enter a title" ng-model="CountdownCreateCtrl.newCountdown.title" style="text-align:center;">
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('1m')">+1m</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('10m')">+10m</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('25m')">+25m</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('1h')">+1h</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('End of Day')">Due End Of Day</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('End of Week')">Due End Of Week</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('End of Month')">Due End Of Month</button>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('End of Year')">Due End Of Year</button>
+      </label>
+    </div>
+  </ion-content>
+  <ion-footer-bar>
+    <label class="item">
+      <button class="button button-clear" ng-click="CountdownCreateCtrl.cancel()">Cancel</button>
+    </label>
+  </ion-footer-bar>
+</ion-view>

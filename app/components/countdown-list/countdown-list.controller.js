@@ -2,7 +2,7 @@
 
 angular.module('tminus.controllers')
 
-.controller('CountdownListCtrl', function($scope, $interval) {
+.controller('CountdownListCtrl', function($scope, $interval, $ionicModal, $firebase) {
     var _this = this;
 
         _this.list = [
@@ -29,16 +29,21 @@ angular.module('tminus.controllers')
     ];
 
 
-        _this.updateCountdownDisplays = function(){
-            var now = moment();
-            _this.list.forEach(function(countdown){
-                var fromNow = moment.duration(countdown.dueAt.diff(now));
-                countdown.remaining = fromNow.format();
-            });
-        };
+  _this.updateCountdownDisplays = function(){
+      var now = moment();
+      _this.list.forEach(function(countdown){
+          var fromNow = moment.duration(countdown.dueAt.diff(now));
+          countdown.remaining = fromNow.format();
 
-        _this.updateCountdownDisplays();
+          if (countdown.dueAt.isBefore(now)){
+            countdown.remaining = '-' + countdown.remaining;
+          }
+      });
+  };
+
+  _this.updateCountdownDisplays();
 
 
-        $interval(_this.updateCountdownDisplays, 1000);
+  $interval(_this.updateCountdownDisplays, 1000);
+
 })
