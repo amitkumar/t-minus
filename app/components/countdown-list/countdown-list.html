@@ -1,0 +1,10 @@
+<ion-view view-title="List">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="countdown in CountdownListCtrl.list" href="#/app/countdown/{{countdown.id}}">
+                <h2>{{countdown.title}}</h2>
+                <p>{{countdown.remaining}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
