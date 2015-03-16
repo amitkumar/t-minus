@@ -5,15 +5,12 @@
         <!-- <span class="input-label">Title</span> -->
         <input type="text" placeholder="Enter a title" ng-model="CountdownCreateCtrl.newCountdown.title" style="text-align:center;">
       </label>
-      <label class="item">
+      <div style="padding: 6px 0 5px 16px;" class="button-bar">
         <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('1m')">+1m</button>
-      </label>
-      <label class="item">
         <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('10m')">+10m</button>
-      </label>
-      <label class="item">
         <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('25m')">+25m</button>
-      </label>
+      </div>
+
       <label class="item">
         <button class="button button-block button-positive" ng-click="CountdownCreateCtrl.create('1h')">+1h</button>
       </label>

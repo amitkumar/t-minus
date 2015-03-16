@@ -2,7 +2,7 @@
 
 angular.module('tminus.controllers')
 
-    .controller('CountdownCreateCtrl', function($scope, $interval) {
+    .controller('CountdownCreateCtrl', function($scope, $firebase) {
         var _this = this;
 
         _this.create = function(remainder){
